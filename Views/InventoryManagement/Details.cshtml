@@ -1,0 +1,37 @@
+﻿@model ProductsListVM
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-lg border-0 w-50">
+        <div class="card-header text-white" style="background-color: cadetblue;">
+            <h4 class="mb-0">📦 Product Details</h4>
+        </div>
+
+        <div class="card-body bg-light">
+            <dl class="row mb-0">
+                <dt class="col-sm-4 fw-semibold text-secondary">ID</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Id)</dd>
+
+                <dt class="col-sm-4 fw-semibold text-secondary">Name</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
+
+                <dt class="col-sm-4 fw-semibold text-secondary">Category</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Category)</dd>
+
+                <dt class="col-sm-4 fw-semibold text-secondary">Price(tk)</dt>
+                <dd class="col-sm-8">@Model.Price.ToString("0.00")</dd>
+
+                <dt class="col-sm-4 fw-semibold text-secondary">Quantity</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Quantity)</dd>
+            </dl>
+        </div>
+
+        <div class="card-footer d-flex justify-content-between bg-white">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-primary" style="background-color: cadetblue;">✏️ Edit</a>
+            <a asp-action="Index" class="btn btn-sm btn-secondary">← Back to List</a>
+        </div>
+    </div>
+</div>
